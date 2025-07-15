@@ -1,114 +1,60 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Interactive Power BI portfolio – created with publish‑to‑web embeds" />
-  <meta name="robots" content="noindex">
-  <title>Power BI Portfolio</title>
-  <style>
-    :root {
-      font-family: system-ui, sans-serif;
-      background: #f8fafc;
-      color: #1e293b;
-    }
-    header{text-align:center;padding:2rem 1rem;}
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;padding:0 1rem 4rem;max-width:1200px;margin:0 auto;}
-    .card{background:#fff;border-radius:1rem;box-shadow:0 4px 10px rgba(0,0,0,.04);overflow:hidden;display:flex;flex-direction:column;}
-    .card h2{margin:0;padding:1rem;font-size:1.25rem;border-bottom:1px solid #e2e8f0;cursor:pointer;user-select:none;transition:background .2s;}
-    .card h2:hover{background:#e2e8f0;}
-    .card iframe{border:none;width:100%;height:480px;}
-
-    /* Full‑screen overlay */
-    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:1000;}
-    .overlay iframe{width:90vw;height:90vh;border:none;box-shadow:0 0 24px rgba(0,0,0,.6);border-radius:1rem;}
-    .overlay button{position:absolute;top:1rem;right:1rem;font-size:2rem;background:none;border:none;color:#fff;cursor:pointer;}
-
-    @media (prefers-color-scheme: dark){
-      :root{background:#0f172a;color:#f8fafc;}
-      .card{background:#1e293b;box-shadow:0 4px 12px rgba(0,0,0,.5);}  
-      .card h2{border-bottom-color:#334155;}
-      .card h2:hover{background:#334155;}
-    }
-  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Analyst & BI Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['Roboto Mono', 'monospace'],
+            },
+            colors: {
+              'navy': '#0a192f',
+              'light-navy': '#112240',
+              'lightest-navy': '#233554',
+              'slate': '#8892b0',
+              'light-slate': '#a8b2d1',
+              'lightest-slate': '#ccd6f6',
+              'white': '#e6f1ff',
+              'green': '#64ffda',
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            },
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
 </head>
-<body>
-  <header>
-    <h1>👋 Hi, I'm <em>Mustafa Ozturk</em> – Power BI Portfolio</h1>
-    <p>Below you can explore the interactive reports I've built using publicly available datasets. Click a card title to open the report in full‑screen.</p>
-  </header>
-
-  <section class="gallery">
-    <!-- Example Card 1 -->
-    <article class="card">
-      <h2>Sales Analysis 2025</h2>
-      <iframe title="Sales Dashboard" src=https://app.powerbi.com/view?r=eyJrIjoiYWY0MDlmNjktYmZhMi00NmIwLWE0NjMtY2EwNDQ1NDlmZmNkIiwidCI6ImU5YzExYzIxLWQ3NjctNDY1Yy1hYjFlLTg0M2I2NTg1MGI2OCJ9></iframe>
-    </article>
-
-    <!-- Example Card 2
-    <article class="card">
-      <h2>E‑commerce KPIs</h2>
-      <iframe title="E‑commerce KPI Dashboard" src="PASTE_YOUR_PUBLISH_TO_WEB_LINK_HERE_2"></iframe>
-    </article>  -->
-
-    <!-- Example Card 3 
-    <article class="card">
-      <h2>Population Map</h2>
-      <iframe title="Demographic Map" src="PASTE_YOUR_PUBLISH_TO_WEB_LINK_HERE_3"></iframe>
-    </article> -->
-
-    <!-- Example Card 3 
-    <article class="card">
-      <h2>Population Map</h2>
-      <iframe title="Demographic Map" src="PASTE_YOUR_PUBLISH_TO_WEB_LINK_HERE_3"></iframe>
-    </article> -->
-  </section>
-
-  <!-- Full‑screen overlay -->
-  <div class="overlay" id="overlay">
-    <button id="closeBtn" aria-label="Close full‑screen">&times;</button>
-    <iframe id="overlayFrame" src=""></iframe>
-  </div>
-
-  <footer style="text-align:center;font-size:.875rem;padding:2rem 1rem;opacity:.6;">
-    <p>© <span id="year"></span> Mustafa Ozturk – Power BI Portfolio. Hosted on GitHub Pages.</p>
-  </footer>
-
-  <script>
-    // current year footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // full‑screen overlay logic
-    const overlay = document.getElementById('overlay');
-    const overlayFrame = document.getElementById('overlayFrame');
-    const closeBtn = document.getElementById('closeBtn');
-
-    document.querySelectorAll('.card h2').forEach(h2 => {
-      h2.addEventListener('click', () => {
-        const src = h2.parentElement.querySelector('iframe').getAttribute('src');
-        overlayFrame.setAttribute('src', src);
-        overlay.style.display = 'flex';
-      });
-    });
-
-    closeBtn.addEventListener('click', () => {
-      overlay.style.display = 'none';
-      overlayFrame.setAttribute('src', '');
-    });
-
-    // close on Escape key or outside click
-    overlay.addEventListener('click', e => {
-      if (e.target === overlay) {
-        overlay.style.display = 'none';
-        overlayFrame.setAttribute('src', '');
-      }
-    });
-    window.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && overlay.style.display === 'flex') {
-        overlay.style.display = 'none';
-        overlayFrame.setAttribute('src', '');
-      }
-    });
-  </script>
+  <body class="bg-navy">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
 </body>
 </html>
