@@ -4,7 +4,7 @@ Welcome to the source code for my personal portfolio website. This project is a 
 
 **➡️ Live Demo: [https://mmustafaozturk1.github.io/](https://mmustafaozturk1.github.io/)**
 
-*(Not: Bu görüntünün görünmesi için projenizin ana dalına `portfolio-screenshot.png` adında bir ekran görüntüsü eklemeniz gerekmektedir.)*
+<!-- *(Not: Bu görüntünün görünmesi için projenizin ana dalına `portfolio-screenshot.png` adında bir ekran görüntüsü eklemeniz gerekmektedir.)* -->
 ![Portfolio Screenshot](https://raw.githubusercontent.com/mmustafaozturk1/mmustafaozturk1.github.io/main/portfolio-screenshot.png) 
 
 ---
