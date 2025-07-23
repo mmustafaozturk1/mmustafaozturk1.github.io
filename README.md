@@ -73,11 +73,11 @@ This site is automatically deployed to GitHub Pages. The `package.json` file is 
 To deploy any changes, simply run:
 ```bash
 npm run deploy
-
+ ```
 This command first builds the application for production (creating a dist folder) and then pushes the contents of that folder to the gh-pages branch of the repository, which is the branch being served by GitHub Pages.
 📂 Project Structure
 The project is organized with a clear and scalable structure:
-
+```bash
 /
 ├── public/               # Static assets
 ├── src/
@@ -92,3 +92,12 @@ The project is organized with a clear and scalable structure:
 ├── package.json          # Project dependencies and scripts
 ├── vite.config.js        # Vite configuration
 └── README.md             # You are here!
+```
+
+## 📬 Contact
+
+Feel free to reach out if you have any questions or would like to connect!
+
+*   **Email:** [muhammetmustafaozturk@gmail.com](mailto:muhammetmustafaozturk@gmail.com)
+*   **LinkedIn:** [linkedin.com/in/m-mustafaozturk](https://linkedin.com/in/m-mustafaozturk)
+*   **GitHub:** [@mmustafaozturk1](https://github.com/mmustafaozturk1)
