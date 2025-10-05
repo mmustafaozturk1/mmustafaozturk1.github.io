@@ -34,7 +34,7 @@ const AboutPage: React.FC = () => {
                      <div>
                         <h2 className="text-2xl font-bold text-lightest-slate mb-4">Professional Summary</h2>
                         <p className="text-light-slate leading-relaxed">
-                            PL-300-certified Data & Business Intelligence Analyst with deep expertise in Power BI, SQL and Python, turning raw data into executive-level insights that accelerate decision-making across multiple industries. Delivered interactive Power BI dashboards that cut manual reporting by 40 percent and enabled real-time resource allocation on government and commercial projects. Skilled in advanced DAX, data modelling and ETL pipelines; comfortable mining large data sets, building predictive models and automating analytics workflows. Known for translating ambiguous business questions into clear analytical strategies and presenting complex findings to non-technical stakeholders. Seeking Data Analyst, Business Intelligence Analyst or Analytics-focused roles where I can blend technical depth and business acumen to drive measurable value.
+                            PL-300-certified Data & Business Intelligence Analyst with deep expertise in Power BI, SQL and Python, turning raw data into executive-level insights that accelerate decision-making across multiple industries. Delivered interactive Power BI dashboards that cut manual reporting by 40 percent and enabled real-time resource allocation on government and commercial projects. Skilled in advanced DAX, data modelling and ETL pipelines; comfortable mining large data sets, building predictive models and automating analytics workflows. Known for translating ambiguous business questions into clear analytical strategies and presenting complex findings to non-technical stakeholders. Seeking Data Analyst, Business Intelligence Analyst or Analytics-focused projects where I can blend technical depth and business acumen to drive measurable value.
                         </p>
                     </div>
 
@@ -44,7 +44,7 @@ const AboutPage: React.FC = () => {
                            <ExperienceItem 
                               title="Freelance BI & Data Analyst"
                               company=""
-                              date="Oct 2023 – Present"
+                              date="Oct 2022 – Present"
                               points={[
                                   "Consolidated data from Excel, Google Analytics, and social media feeds in Power Query, then built interactive Power BI dashboards, reducing manual reporting by 40% and improving lead-tracking efficiency by 25%.",
                                   "Enhanced SQL and data modeling skills through self-learning and hands-on projects.",
