@@ -10,7 +10,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="space-y-1 md:space-y-4">
       <section className="min-h-[45vh] flex flex-col justify-center animate-fade-in-up">
-        <p className="text-green font-mono mb-4 text-md">Hi, my name is</p>
+        <p className="text-green font-mono mb-4 text-md">Hi, I am</p>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-lightest-slate">Mustafa Ozturk.</h1>
         <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-slate mt-2">I build insights from data.</h2>
         <p className="max-w-xl mt-6 text-lg text-light-slate">
